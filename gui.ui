@@ -135,7 +135,7 @@
      <string>Felicia</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="button_submit">
     <property name="geometry">
      <rect>
       <x>110</x>

@@ -49,9 +49,9 @@ class Ui_MainWindow(object):
         self.radio_felicia = QtWidgets.QRadioButton(parent=self.centralwidget)
         self.radio_felicia.setGeometry(QtCore.QRect(120, 190, 62, 21))
         self.radio_felicia.setObjectName("radio_felicia")
-        self.pushButton = QtWidgets.QPushButton(parent=self.centralwidget)
-        self.pushButton.setGeometry(QtCore.QRect(110, 230, 81, 21))
-        self.pushButton.setObjectName("pushButton")
+        self.button_submit = QtWidgets.QPushButton(parent=self.centralwidget)
+        self.button_submit.setGeometry(QtCore.QRect(110, 230, 81, 21))
+        self.button_submit.setObjectName("button_submit")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(parent=MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 300, 18))
@@ -73,7 +73,7 @@ class Ui_MainWindow(object):
         self.radio_bianca.setText(_translate("MainWindow", "Bianca"))
         self.radio_edward.setText(_translate("MainWindow", "Edward"))
         self.radio_felicia.setText(_translate("MainWindow", "Felicia"))
-        self.pushButton.setText(_translate("MainWindow", "SUBMIT"))
+        self.button_submit.setText(_translate("MainWindow", "SUBMIT"))
 
 
 if __name__ == "__main__":
