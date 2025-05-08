@@ -8,7 +8,15 @@ class Logic(QMainWindow, Ui_MainWindow):
 
 		self.button_submit.clicked.connect(lambda: self.submit())
 
+
 	def submit(self):
-		pass
+		try:
+			id_num = self.input_id.text()
+			print(id_num)
+
+		except ValueError:
+			self.label_result.setText(f'ID must only use digits [0-9]')
+
+
 
 

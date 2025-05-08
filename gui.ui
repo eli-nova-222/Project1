@@ -7,19 +7,19 @@
     <x>0</x>
     <y>0</y>
     <width>300</width>
-    <height>300</height>
+    <height>350</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
     <width>300</width>
-    <height>300</height>
+    <height>350</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
     <width>300</width>
-    <height>300</height>
+    <height>350</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -108,6 +108,9 @@
     <property name="text">
      <string>Bianca</string>
     </property>
+    <attribute name="buttonGroup">
+     <string notr="true">radio_group</string>
+    </attribute>
    </widget>
    <widget class="QRadioButton" name="radio_edward">
     <property name="geometry">
@@ -121,6 +124,9 @@
     <property name="text">
      <string>Edward</string>
     </property>
+    <attribute name="buttonGroup">
+     <string notr="true">radio_group</string>
+    </attribute>
    </widget>
    <widget class="QRadioButton" name="radio_felicia">
     <property name="geometry">
@@ -134,6 +140,9 @@
     <property name="text">
      <string>Felicia</string>
     </property>
+    <attribute name="buttonGroup">
+     <string notr="true">radio_group</string>
+    </attribute>
    </widget>
    <widget class="QPushButton" name="button_submit">
     <property name="geometry">
@@ -146,6 +155,27 @@
     </property>
     <property name="text">
      <string>SUBMIT</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_result">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>250</y>
+      <width>171</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string> </string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
     </property>
    </widget>
   </widget>
@@ -163,4 +193,7 @@
  </widget>
  <resources/>
  <connections/>
+ <buttongroups>
+  <buttongroup name="radio_group"/>
+ </buttongroups>
 </ui>
