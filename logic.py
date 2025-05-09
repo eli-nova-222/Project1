@@ -20,13 +20,17 @@ class Logic(QMainWindow, Ui_MainWindow):
          self.label_result.setText('VOTE SUBMITTED')
          self.input_id.setText('')
 
+        #exception for non-int id num
         except ValueError:
             self.label_result.setText(f'ID must only use digits [0-9]')
             self.input_id.setText('')
+
+        #exception for no candidate selected
         except Warning:
             self.label_result.setText(f'Please select candidate')
             self.input_id.setText('')
 
+    # retrieves button vote
     def cast_vote(self):
         if self.radio_bianca.isChecked():
             return 'bianca'
