@@ -16,6 +16,8 @@ class Logic(QMainWindow, Ui_MainWindow):
          id_num = int(self.input_id.text())
          self.cast_vote()
          print(id_num)
+         print(self.cast_vote())
+         self.label_result.setText('VOTE SUBMITTED')
          self.input_id.setText('')
 
         except ValueError:
@@ -27,11 +29,11 @@ class Logic(QMainWindow, Ui_MainWindow):
 
     def cast_vote(self):
         if self.radio_bianca.isChecked():
-            print('bianca')
+            return 'bianca'
         elif self.radio_edward.isChecked():
-            print('edward')
+            return 'edward'
         elif self.radio_felicia.isChecked():
-            print('felicia')
+            return 'felicia'
         else:
             raise Warning
 
