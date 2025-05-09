@@ -21,8 +21,11 @@ class Logic(QMainWindow, Ui_MainWindow):
          # writes to csv file
          with open('vote.csv', 'a+', newline='') as csvfile:
              writer = csv.writer(csvfile)
+             #FIXME: read file to check if ID is preexisting
+             reader = csv.reader(csvfile)
              vote_data = [id_num, vote]
              writer.writerow(vote_data)
+
 
          #reset if correct
          self.label_result.setText('VOTE SUBMITTED')
