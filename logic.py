@@ -17,6 +17,8 @@ class Logic(QMainWindow, Ui_MainWindow):
          self.cast_vote()
          print(id_num)
          print(self.cast_vote())
+
+         #reset if correct
          self.label_result.setText('VOTE SUBMITTED')
          self.input_id.setText('')
 
