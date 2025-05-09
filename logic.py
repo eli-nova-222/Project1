@@ -1,5 +1,6 @@
 from PyQt6.QtWidgets import *
 from gui import *
+import csv
 
 class Logic(QMainWindow, Ui_MainWindow):
     def __init__(self):
@@ -13,10 +14,15 @@ class Logic(QMainWindow, Ui_MainWindow):
 
     def submit(self):
         try:
-         id_num = int(self.input_id.text())
-         self.cast_vote()
-         print(id_num)
-         print(self.cast_vote())
+         id_num = int(self.input_id.text().strip())
+         vote = self.cast_vote()
+         print(f'{id_num},{vote}')
+
+         # writes to csv file
+         with open('vote.csv', 'a+', newline='') as csvfile:
+             writer = csv.writer(csvfile)
+             vote_data = [id_num, vote]
+             writer.writerow(vote_data)
 
          #reset if correct
          self.label_result.setText('VOTE SUBMITTED')
