@@ -2,15 +2,13 @@ from PyQt6.QtWidgets import *
 from gui import *
 import csv
 
+
 class Logic(QMainWindow, Ui_MainWindow):
     def __init__(self):
         super().__init__()
         self.setupUi(self)
 
         self.button_submit.clicked.connect(lambda: self.submit())
-
-
-
 
     def submit(self):
         try:
@@ -26,7 +24,6 @@ class Logic(QMainWindow, Ui_MainWindow):
              vote_data = [id_num, vote]
              writer.writerow(vote_data)
 
-
          #reset if correct
          self.label_result.setText('VOTE SUBMITTED')
          self.input_id.setText('')
@@ -41,15 +38,19 @@ class Logic(QMainWindow, Ui_MainWindow):
             self.label_result.setText(f'Please select candidate')
             self.input_id.setText('')
 
+
     # retrieves button vote
     def cast_vote(self):
         if self.radio_bianca.isChecked():
             return 'bianca'
         elif self.radio_edward.isChecked():
-            return 'edward'
+            return 'ed'
         elif self.radio_felicia.isChecked():
             return 'felicia'
         else:
             raise Warning
+
+
+
 
 
