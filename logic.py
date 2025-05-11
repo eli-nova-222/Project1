@@ -14,7 +14,6 @@ class Logic(QMainWindow, Ui_MainWindow):
         try:
          id_num = int(self.input_id.text().strip())
          vote = self.cast_vote()
-         print(id_num,vote)
 
          # writes to csv file
          with open('vote.csv', 'a+', newline='') as csvfile:
