@@ -14,15 +14,18 @@ class Logic(QMainWindow, Ui_MainWindow):
         try:
          id_num = int(self.input_id.text().strip())
          vote = self.cast_vote()
-         print(f'{id_num},{vote}')
+
 
          # writes to csv file
          with open('vote.csv', 'a+', newline='') as csvfile:
-             writer = csv.writer(csvfile)
-             #FIXME: read file to check if ID is preexisting
              reader = csv.reader(csvfile)
+             writer = csv.writer(csvfile)
              vote_data = [id_num, vote]
              writer.writerow(vote_data)
+
+             for row in reader:
+                 if row[0] == id_num:
+                     raise UserWarning
 
          #reset if correct
          self.label_result.setText('VOTE SUBMITTED')
@@ -33,7 +36,11 @@ class Logic(QMainWindow, Ui_MainWindow):
             self.label_result.setText(f'ID must only use digits [0-9]')
             self.input_id.setText('')
 
-        #exception for no candidate selected
+
+        except UserWarning:
+            self.label_result.setText(f'Please choose a different ID')
+
+            # exception for no candidate selected
         except Warning:
             self.label_result.setText(f'Please select candidate')
             self.input_id.setText('')
@@ -49,8 +56,5 @@ class Logic(QMainWindow, Ui_MainWindow):
             return 'felicia'
         else:
             raise Warning
-
-
-
 
 
